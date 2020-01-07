@@ -1,24 +1,15 @@
-import React from 'react'
-import Joke from './components/Joke.js'
+import React from "react"
+import Joke from "./components/Joke"
+import jokesData from "./components/JokesData"
 
-export default function App(){
-  return(
-    <div>
-      <Joke
-      question = "111"
-      answer = "222"
-      />
-      <Joke
-      question = "333"
-      answer = "444"
-      />
-      <Joke
-      question = "555"
-      answer = "666"
-      />
-      <Joke
-      answer = "666"
-      />
-      </div>
-    )
+function App () {
+const jokeComponents = jokesData.map(joke => <Joke key="joke.id" question={joke.question} answer={joke.answer} />)
+
+return(
+<div>
+{jokeComponents}
+</div>
+)
 }
+
+export default App
