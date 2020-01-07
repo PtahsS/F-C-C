@@ -14,8 +14,11 @@ if (hours<12){
 } else if (hours<19){
   timeOfDay  = "afternoon"
   styles.color = "#00aa22"
-} else {
+} else if (hous<22){
   timeOfDay = "evening"
+  styles.color = "#0000bb"
+} else {
+  timeOfDay = "night"
   styles.color = "#0000bb"
 }
 
