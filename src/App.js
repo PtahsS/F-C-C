@@ -1,22 +1,17 @@
-
 import React from 'react'
 
 class App extends React.Component{
   constructor(){
     super()
     this.state={
-      name: "PtahS",
-      age: "18"
+      isLoggedIn: true
     }
   }
   render(){
     return(
-      <div>
-        <h2>My name is {this.state.name}</h2>
-        <h3>{this.state.age}</h3>
-      </div>
+      <h2>Are you Logged? {this.state.isLoggedIn? "yes":"no"}</h2>
       )
   }
 }
 
-export default App 
+export default App
