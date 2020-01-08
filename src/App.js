@@ -1,22 +1,18 @@
 import React from 'react'
-import TodoItem from './components/TodoItem'
-import TodosData from './components/TodosData'
 
-class App extends React.Component{
-  constructor(){
-    super()
-    this.state={
-      todos: TodosData
-    }
-  }
-  render(){
-    const todosComponent = this.state.todos.map(item=><TodoItem key={item.id} item={item}/>)
-    return(
-        <div>
-          {todosComponent}
-        </div>
-      )
-  }
+function handleClick(){
+  console.log("Hello again")
+}
+
+function App(){
+  return(
+    <div>
+      <img alt="Nature" src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg" height="200px"/>
+      <h1>It`s a nature</h1>
+      <button onClick={handleClick}>Push me</button>
+      <p>... look at console</p>
+    </div>
+    )
 }
 
 export default App
