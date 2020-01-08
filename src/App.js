@@ -1,18 +1,22 @@
 import React from 'react'
 
-function handleClick(){
-  console.log("Hello again")
+function HandleClick(){
+	console.log('It`s a button!')
 }
 
 function App(){
-  return(
-    <div>
-      <img alt="Nature" src="https://media.wired.com/photos/598e35fb99d76447c4eb1f28/master/pass/phonepicutres-TA.jpg" height="200px"/>
-      <h1>It`s a nature</h1>
-      <button onClick={handleClick}>Push me</button>
-      <p>... look at console</p>
-    </div>
-    )
+	return(
+		<div>
+			<img
+				src="https://imagevars.gulfnews.com/2019/11/13/Reader-picture_16e6517ed86_original-ratio.jpeg"
+				width="200px"
+				onMouseOver={()=>{console.log('Hovered')}}
+			/>
+			<h3>It`s a picture</h3>
+			<button onClick={HandleClick}>Push me</button>
+		</div>
+		
+		)
 }
 
 export default App
