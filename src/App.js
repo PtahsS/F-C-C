@@ -1,12 +1,22 @@
-import React from 'react'
-import TodoItem from './components/TodoItem'
-import TodosData from './components/TodosData'
 
-export default function App(){
-  const TodosComponents=TodosData.map(item=><TodoItem key={item.id} item={item}/>)
-  return(
+import React from 'react'
+
+class App extends React.Component{
+  constructor(){
+    super()
+    this.state={
+      name: "PtahS",
+      age: "18"
+    }
+  }
+  render(){
+    return(
       <div>
-        {TodosComponents}
+        <h2>My name is {this.state.name}</h2>
+        <h3>{this.state.age}</h3>
       </div>
-    )
+      )
+  }
 }
+
+export default App 
