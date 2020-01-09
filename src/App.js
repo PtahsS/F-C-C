@@ -1,22 +1,28 @@
 import React from 'react'
 
-function HandleClick(){
-	console.log('It`s a button!')
-}
-
-function App(){
-	return(
-		<div>
-			<img
-				src="https://imagevars.gulfnews.com/2019/11/13/Reader-picture_16e6517ed86_original-ratio.jpeg"
-				width="200px"
-				onMouseOver={()=>{console.log('Hovered')}}
-			/>
-			<h3>It`s a picture</h3>
-			<button onClick={HandleClick}>Push me</button>
-		</div>
-		
-		)
+class App extends React.Component{
+	constructor(){
+		super()
+		this.state={
+			count: 0
+		}
+		this.handleClick=this.handleClick.bind(this)
+	}
+	handleClick(){
+		this.setState(prevState=>{
+			return{
+				count: prevState.count + 1
+			}
+		})
+	}
+	render(){
+		return(
+			<div>
+				<h1>{this.state.count}</h1>
+				<button onClick={this.handleClick}>Push me</button>
+			</div>
+			)
+	}
 }
 
 export default App
