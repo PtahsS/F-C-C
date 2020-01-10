@@ -1,36 +1,26 @@
-import React from 'react'
-import TodoItem from './components/TodoItem'
-import TodosData from './components/TodosData'
+import React, {Component} from 'react'
+import Conditional from './components/Conditional'
 
-class App extends React.Component{
+class App extends Component{
 	constructor(){
 		super()
 		this.state={
-			todos: TodosData
+			isLoading: true
 		}
-		this.handleChange=this.handleChange.bind(this)
 	}
-	handleChange(id){
-		this.setState(prevState=>{
-			const updatedState=prevState.todos.map(todo=>{
-				if(todo.id === id){
-					todo.completed = !todo.completed
-				}
-				return todo
-				})
-			return{
-				todos: updatedState
-			}
-		})
+	componentDidMount(){
+		setTimeout(()=>{
+			this.setState({
+				isLoading: false
+			})
+		}, 3000)
 	}
 	render(){
-		let todosComponent = TodosData.map(item=><TodoItem key={item.id} item={item} handleChange={this.handleChange}/>)
 		return(
-				<div>
-					{todosComponent}
-				</div>
+			<div>
+				<Conditional isLoading={this.state.isLoading}/>
+			</div>
 			)
 	}
 }
-
 export default App
