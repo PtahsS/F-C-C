@@ -3,18 +3,25 @@ import React, {Component} from 'react'
 class App extends Component{
 	constructor(){
 		super()
-		this.state={
-			unreadMessages: ["www", "ddd", "rrr"]
+		this.state = {
+			isLogged: false
 		}
+		this.handleClick = this.handleClick.bind(this)
+	}
+	handleClick(){
+		this.setState({
+			isLogged: !this.state.isLogged
+		})
 	}
 	render(){
+		const buttonText = this.state.isLogged? "Log out" : "Log in"
+		const paragraphText = this.state.isLogged? "You are logged" : "Please, log out"
 		return(
 			<div>
-				{this.state.unreadMessages.length>0 &&
-					<h1>You have {this.state.unreadMessages.length} messages!</h1>
-				}
+				<button onClick={this.handleClick}>{buttonText}</button>
+				<h2>{paragraphText}</h2>
 			</div>
-		)
+			)
 	}
 }
 
