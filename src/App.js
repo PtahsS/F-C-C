@@ -1,11 +1,12 @@
+
 import React, {Component} from 'react'
 import Conditional from './components/Conditional'
 
 class App extends Component{
 	constructor(){
 		super()
-		this.state={
-			isLoading: true
+		this.state = {
+			isLoading:true
 		}
 	}
 	componentDidMount(){
@@ -16,11 +17,17 @@ class App extends Component{
 		}, 3000)
 	}
 	render(){
+
 		return(
 			<div>
-				<Conditional isLoading={this.state.isLoading}/>
+			<h1>Header</h1>
+			{(this.state.isLoading)? 
+				<h1>...isLoading</h1> : <Conditional isLoading={this.state.isLoading}/>
+			}
+			<h1>footer</h1>
 			</div>
 			)
 	}
 }
+
 export default App
